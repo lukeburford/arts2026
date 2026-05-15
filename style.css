@@ -37,7 +37,7 @@ body {
 
 nav {
   position: absolute;
-  top: 28px;
+  top: 40px;
   left: var(--margin);
   right: var(--margin);
 }
@@ -260,9 +260,15 @@ section {
     display: block;
   }
   .mobile-intro-strip svg {
-    width: 100%;
-    height: 32px;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vw;
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: top left;
+  }
+  nav {
+    top: 80px;
   }
   #intro {
     min-height: 80vh;
@@ -321,6 +327,12 @@ section {
   }
   #contact a.email {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    top: 60px;
   }
 }
 
