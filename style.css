@@ -302,16 +302,17 @@ section {
   #contact {
     padding-bottom: 70px;
   }
+  #contact {
+    padding-bottom: 140px;
+  }
   #clients .label {
     margin: 0;
     padding-bottom: 20px;
     padding-top: 0;
   }
-
   section#work {
     padding: 0 0 30px;
   }
-
   section#work .label {
     margin: 0;
     padding: 0 0 30px var(--margin);
