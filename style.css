@@ -120,7 +120,7 @@ section {
   font-size: 16px;
   font-weight: 400;
   color: var(--mid);
-  padding: 10px 0;
+  padding: 10px 10px 10px 0;
 }
 
 #work {
@@ -137,10 +137,6 @@ section {
   display: flex;
   gap: var(--credit-gap);
   margin-bottom: 70px;
-}
-
-.project:last-child {
-  margin-bottom: 0;
 }
 
 .project-images {
@@ -207,11 +203,12 @@ section {
 }
 
 #contact {
-  padding-bottom: 70px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: #000;
 }
 
 #contact .label {
-  padding-top: 120px;
   color: var(--off-white);
   margin-bottom: 60px;
 }
@@ -227,7 +224,7 @@ section {
 
 #contact a.email {
   color: var(--mid);
-  text-decoration: none;
+  text-decoration: underline;
   padding-bottom: 2px;
 }
 
@@ -239,6 +236,10 @@ section {
   margin-bottom: 30px;
 }
 
+#contact p.social {
+  margin-bottom: 0;
+}
+
 #contact svg path {
   fill: var(--mid);
 }
@@ -248,6 +249,22 @@ section {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --margin: 24px;
+    --gap: 24px;
+  }
+  #contact {
+    padding-top: 100px;
+  }
+  #intro,
+  #clients,
+  #work,
+  #contact {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 767px) {
   :root {
     --margin: 24px;
     --gap: 16px;
@@ -281,23 +298,30 @@ section {
   }
   #intro,
   #clients,
-  #work {
-    padding-bottom: 50px;
+  #work,
+  #contact {
+    padding-bottom: 70px;
   }
   #clients .label {
     margin: 0;
     padding-bottom: 20px;
     padding-top: 0;
   }
-  #work .label {
+
+  section#work {
+    padding: 0 0 30px;
+  }
+
+  section#work .label {
     margin: 0;
-    padding-bottom: 30px;
-    padding-top: 0;
+    padding: 0 0 30px var(--margin);
+  }
+  #contact {
+    padding-top: 70px;
   }
   #contact .label {
     margin: 0;
     padding-bottom: 20px;
-    padding-top: 0;
   }
   .project {
     margin-bottom: 40px;
@@ -315,12 +339,32 @@ section {
     overflow-wrap: break-word;
     margin-top: 0;
     font-size: 14px;
+    padding: 0 0 0 var(--margin);
+  }
+  .project-images.three-mobile {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-left: var(--margin);
+    padding-right: 16px;
+    scroll-padding-left: var(--margin);
+  }
+
+  .project-images.three-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-images.three-mobile .img-project {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+    aspect-ratio: 390 / 844;
   }
   #clients .client-grid {
     grid-template-columns: 1fr;
-  }
-  #contact {
-    padding-bottom: 30px;
   }
   #contact h2 {
     margin-bottom: 20px;
